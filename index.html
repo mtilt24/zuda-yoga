@@ -50,271 +50,298 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
   :root {
-    --cream: #FAF6EF;
-    --cream-warm: #F2EBDF;
-    --sand: #E8D9BE;
+    --ink: #313131;
+    --ink-soft: #4A4A4A;
     --gold: #DDBC89;
     --gold-deep: #B6924F;
-    --jungle: #4F5E47;
-    --jungle-deep: #2F3A2A;
-    --ink: #313131;
-    --muted: #6E6862;
-    --hairline: rgba(49, 49, 49, 0.12);
+    --light: #F3F3F3;
+    --light-warm: #F7F4EE;
+    --muted: #737073;
+    --white: #FFFFFF;
+    --hairline: rgba(49, 49, 49, 0.14);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; overflow-x: hidden; }
-  body { overflow-x: hidden; background: var(--cream); color: var(--ink); font-family: 'Montserrat', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.65; font-weight: 400; }
+  body { overflow-x: hidden; background: var(--white); color: var(--ink); font-family: 'Inter', 'halyard-text', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.65; font-weight: 400; }
   img { max-width: 100%; display: block; }
 
+  h1, h2, h3, h4 { font-family: 'Mulish', 'brandon-grotesque', system-ui, sans-serif; font-weight: 700; color: var(--ink); letter-spacing: -0.005em; }
+
   /* NAV */
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250, 246, 239, 0.9); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid transparent; transition: border-color .3s, background .3s; }
-  .nav.scrolled { border-bottom-color: var(--hairline); background: rgba(250, 246, 239, 0.96); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-  .nav-brand img { height: 44px; width: auto; display: block; }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid transparent; transition: border-color .3s, background .3s; }
+  .nav.scrolled { border-bottom-color: var(--hairline); background: rgba(255, 255, 255, 0.97); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .nav-brand img { height: 42px; width: auto; display: block; }
   .nav-cta {
     display: inline-flex; align-items: center; gap: 10px;
-    padding: 11px 22px; border-radius: 999px;
-    background: var(--ink); color: var(--cream);
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
-    text-decoration: none; transition: background .25s, transform .25s;
+    padding: 12px 22px; border-radius: 4px;
+    background: var(--ink); color: var(--white);
+    font-family: 'Mulish', sans-serif; font-size: 15px; letter-spacing: 0.05em; font-weight: 500;
+    text-decoration: none; transition: background .25s;
+    white-space: nowrap;
   }
-  .nav-cta:hover { background: var(--gold-deep); transform: translateY(-1px); }
+  .nav-cta:hover { background: var(--gold-deep); }
 
-  /* GLOBAL TYPE */
-  h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
-  .accent-serif { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; color: var(--gold-deep); letter-spacing: 0; }
-  .eyebrow { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; display: inline-flex; align-items: center; gap: 12px; }
-  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold-deep); }
-
-  .btn-primary {
+  /* BUTTONS */
+  .btn {
     display: inline-flex; align-items: center; gap: 12px;
-    padding: 18px 36px; border-radius: 999px;
-    background: var(--ink); color: var(--cream);
-    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
+    padding: 18px 36px; border-radius: 4px;
+    font-family: 'Mulish', sans-serif; font-size: 17px; letter-spacing: 0.05em; font-weight: 500;
     text-decoration: none; border: none; cursor: pointer;
-    transition: all .3s ease;
+    transition: all .25s ease;
   }
-  .btn-primary:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 20px 40px -20px rgba(182, 146, 79, 0.6); }
-  .btn-primary .arrow { transition: transform .3s; }
-  .btn-primary:hover .arrow { transform: translateX(4px); }
-
-  .btn-gold {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 18px 36px; border-radius: 999px;
-    background: var(--gold); color: var(--ink);
-    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
-    text-decoration: none; border: none; cursor: pointer;
-    transition: all .3s ease;
-  }
-  .btn-gold:hover { background: var(--gold-deep); color: var(--cream); transform: translateY(-2px); }
-  .btn-gold .arrow { transition: transform .3s; }
-  .btn-gold:hover .arrow { transform: translateX(4px); }
+  .btn-ink { background: var(--ink); color: var(--white); }
+  .btn-ink:hover { background: var(--gold-deep); transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: var(--ink); }
+  .btn-gold:hover { background: var(--ink); color: var(--white); transform: translateY(-1px); }
+  .btn-outline-gold { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+  .btn-outline-gold:hover { background: var(--gold); color: var(--ink); }
+  .btn .arrow { transition: transform .25s; }
+  .btn:hover .arrow { transform: translateX(4px); }
 
   /* HERO */
   .hero {
     position: relative;
-    min-height: 92vh;
-    display: flex; align-items: center;
-    padding: 140px 40px 80px;
+    min-height: 88vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 140px 24px 80px;
     overflow: hidden;
-    color: var(--cream);
+    color: var(--white);
+    text-align: center;
     background:
-      linear-gradient(180deg, rgba(47, 58, 42, 0.55) 0%, rgba(47, 58, 42, 0.35) 50%, rgba(47, 58, 42, 0.7) 100%),
+      linear-gradient(180deg, rgba(49, 49, 49, 0.55) 0%, rgba(49, 49, 49, 0.45) 60%, rgba(49, 49, 49, 0.7) 100%),
       url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_2500/FGA/adobestock-311936008') center/cover no-repeat;
   }
-  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
-  .hero-kicker {
-    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
-    color: var(--gold); font-weight: 600; margin-bottom: 24px;
-    display: inline-flex; align-items: center; gap: 14px;
-  }
-  .hero-kicker::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+  .hero-inner { max-width: 1000px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
   .hero h1 {
-    font-family: 'Montserrat', sans-serif; font-weight: 300;
-    font-size: clamp(44px, 6.4vw, 96px); line-height: 1.02;
-    letter-spacing: -0.02em; color: var(--cream);
-    max-width: 900px; margin-bottom: 28px;
+    font-family: 'Mulish', sans-serif; font-weight: 700;
+    font-size: clamp(40px, 6vw, 84px); line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 28px;
+    color: var(--light);
   }
-  .hero h1 .accent-serif { color: var(--gold); font-weight: 500; font-size: 1.02em; }
+  .hero h1 .gold { color: var(--gold); display: block; }
   .hero-sub {
-    font-size: clamp(17px, 1.6vw, 21px); line-height: 1.55;
-    max-width: 580px; color: rgba(250, 246, 239, 0.92);
-    margin-bottom: 36px; font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(16px, 1.6vw, 20px); line-height: 1.6;
+    max-width: 620px; margin: 0 auto 32px;
+    color: rgba(243, 243, 243, 0.92);
+    font-weight: 400;
   }
   .hero-meta {
-    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center;
     margin-bottom: 44px;
-    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--cream); font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px; letter-spacing: 0.06em;
+    color: var(--white); font-weight: 500;
   }
   .hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
-  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-  .hero-price { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250, 246, 239, 0.78); font-weight: 500; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: center; }
+  .hero-price { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(243, 243, 243, 0.85); font-weight: 400; }
   .hero-price strong { color: var(--gold); font-weight: 600; }
 
-  /* INTRO */
-  .intro { padding: 120px 40px; background: var(--cream); }
-  .intro-inner { max-width: 880px; margin: 0 auto; text-align: center; }
-  .intro h2 {
-    font-family: 'Montserrat', sans-serif; font-weight: 400;
-    font-size: clamp(30px, 3.6vw, 48px); line-height: 1.18;
-    color: var(--ink); margin: 28px 0 36px;
+  /* SECTION SHARED */
+  section { padding: 110px 24px; }
+  .container { max-width: 1180px; margin: 0 auto; }
+  .container-narrow { max-width: 820px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 64px; }
+  .section-head h2 {
+    font-family: 'Mulish', sans-serif; font-weight: 700;
+    font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15;
+    color: var(--ink);
   }
-  .intro h2 .accent-serif { font-size: 1.05em; }
-  .intro p { font-size: 17px; line-height: 1.85; color: var(--ink); max-width: 720px; margin: 0 auto 24px; }
+  .section-head h2 .gold { color: var(--gold-deep); }
+  .section-head p { color: var(--muted); font-size: 17px; max-width: 600px; margin: 20px auto 0; line-height: 1.7; font-weight: 400; }
+
+  /* SECTION THEMES */
+  .theme-light { background: var(--light); color: var(--ink); }
+  .theme-light-warm { background: var(--light-warm); color: var(--ink); }
+  .theme-white { background: var(--white); color: var(--ink); }
+  .theme-ink { background: var(--ink); color: var(--light); }
+  .theme-ink h2 { color: var(--white); }
+  .theme-ink .section-head p { color: rgba(243, 243, 243, 0.75); }
+  .theme-gold { background: var(--gold); color: var(--ink); }
+  .theme-gold h2 .gold { color: var(--ink); }
+  .theme-gold .section-head p { color: var(--ink); }
+
+  /* INTRO */
+  .intro { text-align: center; }
+  .intro h2 {
+    font-family: 'Mulish', sans-serif; font-weight: 700;
+    font-size: clamp(30px, 3.6vw, 48px); line-height: 1.15;
+    color: var(--ink); margin-bottom: 36px;
+  }
+  .intro h2 .gold { color: var(--gold-deep); }
+  .intro p { font-size: 17px; line-height: 1.85; color: var(--ink-soft); max-width: 720px; margin: 0 auto 22px; font-weight: 400; }
   .intro p.lead {
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 24px; line-height: 1.5; color: var(--gold-deep);
-    margin-bottom: 36px; font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+    font-size: 21px; line-height: 1.55;
+    color: var(--ink); margin-bottom: 36px;
+    font-weight: 500;
   }
 
   /* DATES STRIP */
-  .strip {
-    background: var(--jungle-deep); color: var(--cream);
-    padding: 56px 40px; text-align: center;
-  }
-  .strip-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-  .strip-item .label { font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
-  .strip-item .value { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(18px, 1.8vw, 22px); color: var(--cream); line-height: 1.3; }
+  .strip { padding: 60px 24px; }
+  .strip-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+  .strip-item .label { font-family: 'Mulish', sans-serif; font-size: 13px; letter-spacing: 0.08em; color: var(--gold); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; }
+  .strip-item .value { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: clamp(18px, 1.8vw, 22px); color: var(--white); line-height: 1.3; }
 
   /* INCLUDED */
-  .included { padding: 120px 40px; background: var(--cream); }
-  .included-head { max-width: 1200px; margin: 0 auto 64px; text-align: center; }
-  .included-head h2 { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.18; color: var(--ink); margin-top: 20px; }
-  .included-head h2 .accent-serif { font-size: 1.05em; }
-  .included-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 56px; }
-  .include-item { display: flex; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--hairline); align-items: flex-start; }
-  .include-item .num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold-deep); font-size: 22px; font-weight: 500; min-width: 28px; line-height: 1.2; }
-  .include-item .body strong { display: block; font-weight: 600; font-size: 16px; color: var(--ink); margin-bottom: 4px; }
-  .include-item .body p { font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+  .included-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .include-card {
+    background: var(--white);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 36px 32px;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .include-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 20px 40px -20px rgba(49, 49, 49, 0.15); }
+  .include-card .num { font-family: 'Mulish', sans-serif; color: var(--gold-deep); font-size: 13px; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; }
+  .include-card h3 { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
+  .include-card p { font-size: 14.5px; color: var(--muted); line-height: 1.65; font-weight: 400; }
 
   /* GALLERY */
-  .gallery { padding: 80px 40px 120px; background: var(--cream-warm); }
-  .gallery-head { max-width: 1200px; margin: 0 auto 56px; text-align: center; }
-  .gallery-head h2 { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.18; color: var(--ink); margin-top: 20px; }
-  .gallery-head p { color: var(--muted); font-size: 16px; max-width: 600px; margin: 18px auto 0; line-height: 1.7; }
-  .gallery-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .gallery-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .g-tile { aspect-ratio: 4 / 5; border-radius: 6px; overflow: hidden; background-size: cover; background-position: center; transition: transform .5s ease; }
   .g-tile:hover { transform: scale(1.02); }
   .g-tile.tall { grid-row: span 2; aspect-ratio: 4 / 6; }
   .g-tile.wide { grid-column: span 2; aspect-ratio: 8 / 5; }
 
   /* HOSTS */
-  .hosts { padding: 120px 40px; background: var(--cream); text-align: center; }
-  .hosts-head { max-width: 760px; margin: 0 auto 64px; }
-  .hosts-head h2 { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.18; color: var(--ink); margin: 20px 0 24px; }
-  .hosts-head p { color: var(--muted); font-size: 16.5px; line-height: 1.7; }
-  .hosts-grid { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-  .host { background: var(--cream-warm); border-radius: 12px; overflow: hidden; text-align: left; border: 1px solid var(--hairline); }
+  .hosts-grid { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .host { background: var(--white); border-radius: 6px; overflow: hidden; text-align: left; border: 1px solid var(--hairline); transition: transform .25s, box-shadow .25s; }
+  .host:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -20px rgba(49, 49, 49, 0.15); }
   .host-portrait {
     aspect-ratio: 4 / 5;
-    background: linear-gradient(135deg, var(--sand) 0%, var(--gold) 50%, var(--jungle) 100%);
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     display: flex; align-items: center; justify-content: center;
-    color: rgba(49, 49, 49, 0.55); font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 72px; font-weight: 500;
+    color: rgba(49, 49, 49, 0.5); font-family: 'Mulish', sans-serif;
+    font-size: 72px; font-weight: 700; letter-spacing: 0.04em;
   }
-  .host-body { padding: 28px 28px 32px; }
-  .host-name { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 24px; color: var(--ink); margin-bottom: 6px; }
-  .host-role { font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+  .host-body { padding: 26px 28px 30px; }
+  .host-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
+  .host-role { font-family: 'Mulish', sans-serif; font-size: 13px; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 600; text-transform: uppercase; }
 
   /* ROOMS */
-  .rooms { padding: 120px 40px; background: var(--cream-warm); }
-  .rooms-head { max-width: 1200px; margin: 0 auto 56px; text-align: center; }
-  .rooms-head h2 { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; color: var(--ink); margin: 20px 0 18px; }
-  .rooms-head h2 .accent-serif { font-size: 1.05em; }
-  .rooms-head p { color: var(--muted); font-size: 16px; max-width: 580px; margin: 0 auto; line-height: 1.7; }
-  .rooms-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .rooms-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .room {
     display: flex; flex-direction: column;
-    background: #fff; border: 1px solid var(--hairline); border-radius: 12px; overflow: hidden;
-    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    background: var(--white);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     text-decoration: none; color: inherit;
   }
-  .room:hover { transform: translateY(-4px); box-shadow: 0 28px 56px -28px rgba(49, 49, 49, 0.2); border-color: var(--gold); }
-  .room-img { aspect-ratio: 4 / 3; background-size: cover; background-position: center; background-color: var(--sand); }
-  .room-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-  .room-name { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 22px; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-  .room-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
-  .room-price strong { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 28px; color: var(--gold-deep); }
-  .room-price .pp { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
-  .room-availability { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; margin-bottom: 16px; }
+  .room:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -28px rgba(49, 49, 49, 0.25); border-color: var(--gold); }
+  .room-img { aspect-ratio: 4 / 3; background-size: cover; background-position: center; background-color: var(--light); }
+  .room-body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+  .room-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); margin-bottom: 12px; line-height: 1.3; }
+  .room-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .room-price strong { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 28px; color: var(--gold-deep); }
+  .room-price .pp { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); font-weight: 500; }
+  .room-availability { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 600; margin-bottom: 16px; text-transform: uppercase; }
   .room-availability.urgent { color: #B65A3F; }
-  .room-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 22px; flex: 1; }
-  .room-deposit { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; font-weight: 500; }
+  .room-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 22px; flex: 1; font-weight: 400; }
+  .room-deposit { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 18px; font-weight: 500; }
   .room-cta {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-flex; align-items: center; gap: 8px;
     align-self: flex-start;
-    font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
-    color: var(--ink); padding: 12px 22px;
-    background: var(--gold); border-radius: 999px;
+    font-family: 'Mulish', sans-serif; font-size: 15px; letter-spacing: 0.04em; font-weight: 600;
+    color: var(--white); padding: 12px 22px;
+    background: var(--ink); border-radius: 4px;
     transition: all .25s;
   }
-  .room:hover .room-cta { background: var(--ink); color: var(--cream); }
+  .room:hover .room-cta { background: var(--gold-deep); }
 
-  /* NOT INCLUDED */
-  .notes { padding: 120px 40px; background: var(--cream); }
-  .notes-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-  .note-card { padding: 36px; background: var(--cream-warm); border-radius: 12px; border: 1px solid var(--hairline); }
-  .note-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 22px; color: var(--ink); margin-bottom: 20px; }
+  /* NOTES */
+  .notes-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .note-card { padding: 36px; background: var(--white); border-radius: 6px; border: 1px solid var(--hairline); }
+  .note-card h3 { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); margin-bottom: 20px; }
   .note-card ul { list-style: none; padding: 0; }
-  .note-card li { padding: 10px 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; border-bottom: 1px dashed var(--hairline); }
+  .note-card li { padding: 12px 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; border-bottom: 1px solid var(--hairline); font-weight: 400; }
   .note-card li:last-child { border-bottom: none; }
   .note-card li strong { color: var(--ink); font-weight: 600; }
+  .note-card li a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
 
   /* FINAL CTA */
   .final {
-    padding: 140px 40px;
+    padding: 140px 24px;
     background:
-      linear-gradient(180deg, rgba(47, 58, 42, 0.78) 0%, rgba(47, 58, 42, 0.88) 100%),
+      linear-gradient(180deg, rgba(49, 49, 49, 0.78) 0%, rgba(49, 49, 49, 0.85) 100%),
       url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_2500/FGA/172529070') center/cover no-repeat;
-    color: var(--cream); text-align: center;
+    color: var(--white); text-align: center;
   }
   .final-inner { max-width: 760px; margin: 0 auto; }
-  .final h2 { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.08; color: var(--cream); margin: 24px 0 28px; letter-spacing: -0.01em; }
-  .final h2 .accent-serif { color: var(--gold); font-weight: 500; font-size: 1.05em; }
-  .final p { color: rgba(250, 246, 239, 0.88); font-size: 18px; line-height: 1.75; max-width: 580px; margin: 0 auto 40px; }
-  .final .eyebrow { color: var(--gold); }
-  .final .eyebrow::before { background: var(--gold); }
+  .final h2 { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 60px); line-height: 1.1; color: var(--white); margin-bottom: 24px; letter-spacing: -0.015em; }
+  .final h2 .gold { color: var(--gold); }
+  .final p { color: rgba(243, 243, 243, 0.88); font-size: 17px; line-height: 1.75; max-width: 580px; margin: 0 auto 36px; font-weight: 400; }
 
   /* FOOTER */
-  footer { background: var(--ink); color: rgba(250, 246, 239, 0.78); padding: 64px 40px 36px; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 36px; border-bottom: 1px solid rgba(250, 246, 239, 0.12); }
+  footer { background: var(--ink); color: rgba(243, 243, 243, 0.78); padding: 56px 24px 32px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(243, 243, 243, 0.12); }
   .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
-  .footer-links { display: flex; gap: 28px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; }
-  .footer-links a { color: rgba(250, 246, 239, 0.78); text-decoration: none; transition: color .25s; }
+  .footer-links { display: flex; gap: 28px; font-family: 'Mulish', sans-serif; font-size: 15px; font-weight: 500; flex-wrap: wrap; justify-content: center; }
+  .footer-links a { color: rgba(243, 243, 243, 0.78); text-decoration: none; transition: color .25s; }
   .footer-links a:hover { color: var(--gold); }
-  .footer-bottom { max-width: 1200px; margin: 28px auto 0; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250, 246, 239, 0.52); text-align: center; font-weight: 500; }
+  .footer-bottom { max-width: 1200px; margin: 24px auto 0; font-family: 'Mulish', sans-serif; font-size: 13px; color: rgba(243, 243, 243, 0.52); text-align: center; font-weight: 400; }
 
-  .fade-up { opacity: 0; transform: translateY(24px); }
+  .fade-up { opacity: 0; transform: translateY(20px); }
 
   /* RESPONSIVE */
-  @media (max-width: 960px) {
-    .nav-inner { padding: 12px 20px; }
-    .hero { padding: 120px 20px 60px; min-height: 86vh; }
-    .strip { padding: 40px 20px; }
-    .strip-inner { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
-    .intro { padding: 80px 20px; }
-    .included { padding: 80px 20px; }
-    .included-grid { grid-template-columns: 1fr; gap: 0; }
-    .gallery { padding: 60px 20px 80px; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 1100px) {
+    .included-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 860px) {
+    .nav-inner { padding: 12px 16px; }
+    .nav-brand img { height: 34px; }
+    .nav-cta { padding: 10px 16px; font-size: 13px; }
+    .hero { padding: 110px 18px 60px; min-height: auto; }
+    .hero h1 { font-size: clamp(34px, 9vw, 52px); }
+    .hero-sub { font-size: 16px; }
+    .hero-meta { font-size: 12px; gap: 10px; margin-bottom: 32px; }
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+    .hero-actions .btn { justify-content: center; width: 100%; padding: 16px 24px; font-size: 15px; }
+    .hero-price { text-align: center; }
+    section { padding: 70px 18px; }
+    .section-head { margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(26px, 7vw, 36px); }
+    .section-head p { font-size: 15px; margin-top: 14px; }
+    .intro h2 { font-size: clamp(26px, 7vw, 38px); margin-bottom: 24px; }
+    .intro p { font-size: 16px; line-height: 1.75; }
+    .intro p.lead { font-size: 18px; }
+    .strip { padding: 40px 18px; }
+    .strip-inner { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+    .strip-item .label { font-size: 11px; }
+    .strip-item .value { font-size: 16px; }
+    .included-grid { grid-template-columns: 1fr; gap: 14px; }
+    .include-card { padding: 26px 22px; }
+    .include-card h3 { font-size: 17px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .g-tile { aspect-ratio: 4 / 5; }
     .g-tile.tall { grid-row: auto; aspect-ratio: 4 / 5; }
     .g-tile.wide { grid-column: span 2; aspect-ratio: 4 / 3; }
-    .hosts { padding: 80px 20px; }
-    .hosts-grid { grid-template-columns: 1fr; gap: 20px; }
-    .rooms { padding: 80px 20px; }
-    .rooms-grid { grid-template-columns: 1fr; gap: 18px; }
-    .notes { padding: 80px 20px; }
-    .notes-inner { grid-template-columns: 1fr; gap: 18px; }
-    .final { padding: 100px 20px; }
-    footer { padding: 48px 20px 28px; }
+    .hosts-grid { grid-template-columns: 1fr; gap: 16px; max-width: 420px; }
+    .host-portrait { aspect-ratio: 16 / 10; font-size: 56px; }
+    .rooms-grid { grid-template-columns: 1fr; gap: 16px; }
+    .room-img { aspect-ratio: 16 / 10; }
+    .room-body { padding: 22px 22px 24px; }
+    .room-price strong { font-size: 26px; }
+    .notes-inner { grid-template-columns: 1fr; gap: 14px; }
+    .note-card { padding: 26px 22px; }
+    .final { padding: 90px 18px; }
+    .final h2 { font-size: clamp(28px, 8vw, 42px); }
+    .final p { font-size: 16px; }
+    .final .btn { width: 100%; max-width: 360px; justify-content: center; padding: 16px 24px; }
+    footer { padding: 40px 18px 24px; }
     .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { gap: 18px; font-size: 14px; }
   }
 </style>
 </head>
@@ -333,9 +360,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-kicker fade-up">Sacred Reset Costa Rica</div>
-    <h1 class="fade-up">Seven nights to <span class="accent-serif">slow down</span>, reconnect, and come home renewed.</h1>
-    <p class="hero-sub fade-up">A week of yoga, breathwork, meditation, and intentional rest in the jungle of Nosara with Jimmy Wheeler and Heidi Hemler.</p>
+    <h1 class="fade-up">Seven nights to slow down. <span class="gold">Sacred Reset Costa Rica.</span></h1>
+    <p class="hero-sub fade-up">Yoga, breathwork, meditation, and intentional rest in the jungle of Nosara with Jimmy Wheeler and Heidi Hemler.</p>
     <div class="hero-meta fade-up">
       <span>Oct 17 – 24, 2026</span>
       <span class="dot"></span>
@@ -344,25 +370,24 @@
       <span>Nosara, Costa Rica</span>
     </div>
     <div class="hero-actions fade-up">
-      <a class="btn-gold" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Reserve Your Room <span class="arrow">→</span></a>
+      <a class="btn btn-gold" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Reserve Your Room <span class="arrow">→</span></a>
       <span class="hero-price">From <strong>$2,500</strong> · $500 deposit holds your spot</span>
     </div>
   </div>
 </section>
 
 <!-- INTRO -->
-<section class="intro">
-  <div class="intro-inner">
-    <div class="eyebrow fade-up">A return to yourself</div>
-    <h2 class="fade-up">Step away from the noise. <span class="accent-serif">Remember what it feels like</span> to be fully alive.</h2>
-    <p class="lead fade-up">Nestled in the lush jungle of Nosara, this retreat is an invitation to slow down, soften the nervous system, and reconnect to what matters most.</p>
-    <p class="fade-up">Through yoga, meditation, dharma, nourishing meals, and meaningful community, we create space to move with presence and rest with intention. Each day weaves together practices that awaken the body, restore balance, and deepen your connection to yourself, both on and off the mat.</p>
-    <p class="fade-up">Located in the heart of Playa Guiones, Bodhi Tree Yoga Resort offers luxury accommodations surrounded by tropical beauty, minutes from the ocean. Spend your afternoons surfing, exploring the beach, relaxing by the pool, booking a spa treatment, or simply embracing the rhythm of Costa Rica.</p>
+<section class="intro theme-white">
+  <div class="container-narrow">
+    <h2 class="fade-up">A week to come home to <span class="gold">yourself</span>.</h2>
+    <p class="lead fade-up">Step away from the noise of daily life and remember what it feels like to be fully alive.</p>
+    <p class="fade-up">Nestled in the lush jungle of Nosara, this retreat is an invitation to slow down, soften the nervous system, and reconnect to what matters most. Through yoga, meditation, dharma, nourishing meals, and meaningful community, we create space to move with presence and rest with intention.</p>
+    <p class="fade-up">Each day weaves together practices that awaken the body, restore balance, and deepen your connection to yourself, both on and off the mat. Located in the heart of Playa Guiones, Bodhi Tree Yoga Resort offers luxury accommodations surrounded by tropical beauty, minutes from the ocean.</p>
   </div>
 </section>
 
 <!-- DATES STRIP -->
-<section class="strip">
+<section class="strip theme-ink">
   <div class="strip-inner">
     <div class="strip-item">
       <div class="label">Dates</div>
@@ -384,62 +409,49 @@
 </section>
 
 <!-- INCLUDED -->
-<section class="included">
-  <div class="included-head fade-up">
-    <div class="eyebrow">Your week</div>
-    <h2>What's <span class="accent-serif">included</span>.</h2>
+<section class="theme-light-warm">
+  <div class="section-head fade-up">
+    <h2>What's <span class="gold">included</span>.</h2>
+    <p>Everything you need for a full week of rest, practice, and renewal at Bodhi Tree Yoga Resort.</p>
   </div>
   <div class="included-grid">
-    <div class="include-item fade-up">
-      <div class="num">i.</div>
-      <div class="body">
-        <strong>7 nights luxury accommodations</strong>
-        <p>Your room at Bodhi Tree Yoga Resort, surrounded by tropical jungle and minutes from Playa Guiones.</p>
-      </div>
+    <div class="include-card fade-up">
+      <div class="num">01</div>
+      <h3>Seven nights luxury accommodations</h3>
+      <p>Your room at Bodhi Tree Yoga Resort, surrounded by tropical jungle and minutes from Playa Guiones.</p>
     </div>
-    <div class="include-item fade-up">
-      <div class="num">ii.</div>
-      <div class="body">
-        <strong>Daily yoga (1–2 classes per day)</strong>
-        <p>Dynamic flow, slower restorative, and everything between, designed to wake you up and bring you home.</p>
-      </div>
+    <div class="include-card fade-up">
+      <div class="num">02</div>
+      <h3>Daily yoga, 1 to 2 classes</h3>
+      <p>Dynamic flow, slower restorative, and everything between, designed to wake you up and bring you home.</p>
     </div>
-    <div class="include-item fade-up">
-      <div class="num">iii.</div>
-      <div class="body">
-        <strong>Guided meditation &amp; breathwork</strong>
-        <p>Daily practices to soften the nervous system and reconnect to breath, body, and presence.</p>
-      </div>
+    <div class="include-card fade-up">
+      <div class="num">03</div>
+      <h3>Guided meditation &amp; breathwork</h3>
+      <p>Daily practices to soften the nervous system and reconnect to breath, body, and presence.</p>
     </div>
-    <div class="include-item fade-up">
-      <div class="num">iv.</div>
-      <div class="body">
-        <strong>Dharma talks &amp; workshops</strong>
-        <p>Time to slow down, learn, and integrate the practice into the rest of your life.</p>
-      </div>
+    <div class="include-card fade-up">
+      <div class="num">04</div>
+      <h3>Dharma talks &amp; workshops</h3>
+      <p>Time to slow down, learn, and integrate the practice into the rest of your life.</p>
     </div>
-    <div class="include-item fade-up">
-      <div class="num">v.</div>
-      <div class="body">
-        <strong>3 nourishing meals per day</strong>
-        <p>Fresh, local, and lovingly prepared at the Bodhi Tree restaurant.</p>
-      </div>
+    <div class="include-card fade-up">
+      <div class="num">05</div>
+      <h3>Three nourishing meals daily</h3>
+      <p>Fresh, local, and lovingly prepared at the Bodhi Tree restaurant.</p>
     </div>
-    <div class="include-item fade-up">
-      <div class="num">vi.</div>
-      <div class="body">
-        <strong>Resort amenities &amp; nature</strong>
-        <p>Pools, jungle gardens, spa access, beach shuttle, and the magic of Pura Vida just outside your door.</p>
-      </div>
+    <div class="include-card fade-up">
+      <div class="num">06</div>
+      <h3>Resort amenities &amp; nature</h3>
+      <p>Pools, jungle gardens, spa access, beach shuttle, and the magic of Pura Vida just outside your door.</p>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery">
-  <div class="gallery-head fade-up">
-    <div class="eyebrow">Where you'll be</div>
-    <h2>Bodhi Tree Yoga <span class="accent-serif">Resort</span>.</h2>
+<section class="theme-white">
+  <div class="section-head fade-up">
+    <h2>Bodhi Tree Yoga <span class="gold">Resort</span>.</h2>
     <p>Luxury accommodations, open-air yoga shalas, jungle gardens, three pools, and an on-site spa, all in the heart of Nosara.</p>
   </div>
   <div class="gallery-grid">
@@ -454,10 +466,9 @@
 </section>
 
 <!-- HOSTS -->
-<section class="hosts">
-  <div class="hosts-head fade-up">
-    <div class="eyebrow">Your guides</div>
-    <h2>Held with <span class="accent-serif">care</span>.</h2>
+<section class="theme-light">
+  <div class="section-head fade-up">
+    <h2>Held with <span class="gold">care</span>.</h2>
     <p>Jimmy and Heidi bring years of teaching, warmth, and a deep love for the practice. They create the kind of space where students feel met, seen, and supported, on the mat and beyond it.</p>
   </div>
   <div class="hosts-grid">
@@ -479,11 +490,10 @@
 </section>
 
 <!-- ROOMS -->
-<section class="rooms" id="rooms">
-  <div class="rooms-head fade-up">
-    <div class="eyebrow">Pick your stay</div>
-    <h2>Choose your <span class="accent-serif">room</span>.</h2>
-    <p>All rates include the full retreat experience. A $500 deposit holds your spot, refundable per the cancellation policy. Tap any room to book on WeTravel.</p>
+<section class="theme-white" id="rooms">
+  <div class="section-head fade-up">
+    <h2>Choose your <span class="gold">room</span>.</h2>
+    <p>All rates include the full retreat experience. A $500 deposit holds your spot. Tap any room to book on WeTravel.</p>
   </div>
   <div class="rooms-grid">
 
@@ -493,14 +503,14 @@
         <div class="room-name">Casita Standard, Shared</div>
         <div class="room-price"><strong>$2,500</strong><span class="pp">per person</span></div>
         <div class="room-availability">6 available</div>
-        <p class="room-desc">Two bedrooms connected by one shared ensuite bathroom. Air conditioning. Ideal for friends traveling together who want a private sleeping space with shared common areas.</p>
+        <p class="room-desc">Two bedrooms connected by one shared ensuite bathroom. Air conditioning. Ideal for friends who want a private sleeping space with shared common areas.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
       </div>
     </a>
 
     <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746812106')"></div>
+      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/bodhi-nov-lowres-067-870x965')"></div>
       <div class="room-body">
         <div class="room-name">Quadruple Bunkroom</div>
         <div class="room-price"><strong>$2,600</strong><span class="pp">per person</span></div>
@@ -517,7 +527,7 @@
         <div class="room-name">Queen Bungalow</div>
         <div class="room-price"><strong>$3,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">4 available</div>
-        <p class="room-desc">Two queen beds in one bedroom with a large shared ensuite bathroom and air conditioning. Great for friends open to sharing a space in a relaxed environment.</p>
+        <p class="room-desc">Two queen beds in one bedroom with a large shared ensuite bathroom and air conditioning. Great for friends sharing a relaxed space.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
       </div>
@@ -536,7 +546,7 @@
     </a>
 
     <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/bodhicasitas-kirstenellis-022-hr-870x965')"></div>
+      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/bodhicasitas-kirstenellis-007-hr-870x965')"></div>
       <div class="room-body">
         <div class="room-name">Casita Standard, King</div>
         <div class="room-price"><strong>$3,500</strong><span class="pp">per person</span></div>
@@ -548,7 +558,7 @@
     </a>
 
     <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746791436')"></div>
+      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/bodhicasitas-kirstenellis-014-hr-870x965')"></div>
       <div class="room-body">
         <div class="room-name">Casita Deluxe</div>
         <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
@@ -560,7 +570,7 @@
     </a>
 
     <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746793388')"></div>
+      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/jungle-room-bodhi-tree-2-870x965')"></div>
       <div class="room-body">
         <div class="room-name">King Bungalow</div>
         <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
@@ -575,7 +585,7 @@
 </section>
 
 <!-- NOTES -->
-<section class="notes">
+<section class="theme-light">
   <div class="notes-inner">
     <div class="note-card fade-up">
       <h3>Not included</h3>
@@ -592,7 +602,7 @@
         <li><strong>Deposit.</strong> A non-refundable $500 deposit reserves your spot.</li>
         <li><strong>Cancellations 60+ days out.</strong> 50% of the total (less deposit) is refunded.</li>
         <li><strong>Cancellations within 30 days.</strong> Unfortunately, no refunds can be given.</li>
-        <li><strong>Questions?</strong> Email Jim at <a href="mailto:Jim@hensonlowman.com" style="color:var(--gold-deep);">Jim@hensonlowman.com</a>.</li>
+        <li><strong>Questions?</strong> Email Jim at <a href="mailto:Jim@hensonlowman.com">Jim@hensonlowman.com</a>.</li>
       </ul>
     </div>
   </div>
@@ -601,10 +611,9 @@
 <!-- FINAL CTA -->
 <section class="final">
   <div class="final-inner">
-    <div class="eyebrow fade-up">Ready when you are</div>
-    <h2 class="fade-up">Your seat in the <span class="accent-serif">jungle</span> is waiting.</h2>
+    <h2 class="fade-up">Your seat in the <span class="gold">jungle</span> is waiting.</h2>
     <p class="fade-up">Rooms are filling. Pick yours, place a $500 deposit, and the rest of the trip details, packing lists, and travel logistics will follow.</p>
-    <a class="btn-gold fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Reserve Your Room <span class="arrow">→</span></a>
+    <a class="btn btn-gold fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Reserve Your Room <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -632,7 +641,7 @@
   gsap.utils.toArray('section').forEach(section => {
     if (section.classList.contains('hero')) return;
     gsap.to(section.querySelectorAll('.fade-up'), {
-      opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', stagger: 0.08,
+      opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', stagger: 0.07,
       scrollTrigger: { trigger: section, start: 'top 88%', toggleActions: 'play none none none' }
     });
   });
