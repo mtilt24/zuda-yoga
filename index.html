@@ -72,21 +72,6 @@
 
   h1, h2, h3, h4 { font-family: 'Mulish', 'brandon-grotesque', system-ui, sans-serif; font-weight: 700; color: var(--ink); letter-spacing: -0.005em; }
 
-  /* NAV */
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid transparent; transition: border-color .3s, background .3s; }
-  .nav.scrolled { border-bottom-color: var(--hairline); background: rgba(255, 255, 255, 0.97); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-  .nav-brand img { height: 42px; width: auto; display: block; }
-  .nav-cta {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 12px 22px; border-radius: 4px;
-    background: var(--ink); color: var(--white);
-    font-family: 'Mulish', sans-serif; font-size: 15px; letter-spacing: 0.05em; font-weight: 500;
-    text-decoration: none; transition: background .25s;
-    white-space: nowrap;
-  }
-  .nav-cta:hover { background: var(--gold-deep); }
-
   /* BUTTONS */
   .btn {
     display: inline-flex; align-items: center; gap: 12px;
@@ -109,7 +94,7 @@
     position: relative;
     min-height: 88vh;
     display: flex; align-items: center; justify-content: center;
-    padding: 140px 24px 80px;
+    padding: 80px 24px 80px;
     overflow: hidden;
     color: var(--white);
     text-align: center;
@@ -281,15 +266,6 @@
   .final h2 .gold { color: var(--gold); }
   .final p { color: rgba(243, 243, 243, 0.88); font-size: 17px; line-height: 1.75; max-width: 580px; margin: 0 auto 36px; font-weight: 400; }
 
-  /* FOOTER */
-  footer { background: var(--ink); color: rgba(243, 243, 243, 0.78); padding: 56px 24px 32px; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(243, 243, 243, 0.12); }
-  .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
-  .footer-links { display: flex; gap: 28px; font-family: 'Mulish', sans-serif; font-size: 15px; font-weight: 500; flex-wrap: wrap; justify-content: center; }
-  .footer-links a { color: rgba(243, 243, 243, 0.78); text-decoration: none; transition: color .25s; }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-bottom { max-width: 1200px; margin: 24px auto 0; font-family: 'Mulish', sans-serif; font-size: 13px; color: rgba(243, 243, 243, 0.52); text-align: center; font-weight: 400; }
-
   .fade-up { opacity: 0; transform: translateY(20px); }
 
   /* RESPONSIVE */
@@ -297,10 +273,7 @@
     .included-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 860px) {
-    .nav-inner { padding: 12px 16px; }
-    .nav-brand img { height: 34px; }
-    .nav-cta { padding: 10px 16px; font-size: 13px; }
-    .hero { padding: 110px 18px 60px; min-height: auto; }
+    .hero { padding: 60px 18px 60px; min-height: auto; }
     .hero h1 { font-size: clamp(34px, 9vw, 52px); }
     .hero-sub { font-size: 16px; }
     .hero-meta { font-size: 12px; gap: 10px; margin-bottom: 32px; }
@@ -335,23 +308,10 @@
     .final h2 { font-size: clamp(28px, 8vw, 42px); }
     .final p { font-size: 16px; }
     .final .btn { width: 100%; max-width: 360px; justify-content: center; padding: 16px 24px; }
-    footer { padding: 40px 18px 24px; }
-    .footer-inner { flex-direction: column; text-align: center; }
-    .footer-links { gap: 18px; font-size: 14px; }
   }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="https://www.zudayoga.com/" class="nav-brand" aria-label="Zuda Yoga home">
-      <img src="https://images.squarespace-cdn.com/content/v1/687d4f0df3c19d4b337e7952/08d8d9ff-6505-451b-8196-9e8a082496aa/Zuda+Yoga.png" alt="Zuda Yoga" />
-    </a>
-    <a class="nav-cta" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Reserve Your Spot</a>
-  </div>
-</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -550,7 +510,7 @@
         <div class="room-name">Casita Deluxe</div>
         <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">4 available</div>
-        <p class="room-desc">Our most elevated room. Two separate private bedrooms, each with its own bathroom and air conditioning. Shared occupancy available at $2,500 per guest, email Jim for details.</p>
+        <p class="room-desc">Our most elevated room. Two separate private bedrooms, each with its own bathroom and air conditioning. Shared occupancy available at $2,500 per guest, email Jimmy for details.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
       </div>
@@ -589,7 +549,7 @@
         <li><strong>Deposit.</strong> A non-refundable $500 deposit reserves your spot.</li>
         <li><strong>Cancellations 60+ days out.</strong> 50% of the total (less deposit) is refunded.</li>
         <li><strong>Cancellations within 30 days.</strong> Unfortunately, no refunds can be given.</li>
-        <li><strong>Questions?</strong> Email Jim at <a href="mailto:Jim@hensonlowman.com">Jim@hensonlowman.com</a>.</li>
+        <li><strong>Questions?</strong> Email Jimmy at <a href="mailto:Jim@hensonlowman.com">Jim@hensonlowman.com</a>.</li>
       </ul>
     </div>
   </div>
@@ -604,25 +564,8 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <a class="footer-logo" href="https://www.zudayoga.com/" aria-label="Zuda Yoga home">
-      <img src="https://images.squarespace-cdn.com/content/v1/687d4f0df3c19d4b337e7952/08d8d9ff-6505-451b-8196-9e8a082496aa/Zuda+Yoga.png" alt="Zuda Yoga" />
-    </a>
-    <div class="footer-links">
-      <a href="https://www.zudayoga.com/">Zuda Yoga</a>
-      <a href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Book on WeTravel</a>
-      <a href="mailto:Jim@hensonlowman.com">Email Jim</a>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Zuda Yoga · Sacred Reset Costa Rica</div>
-</footer>
-
 <script>
   gsap.registerPlugin(ScrollTrigger);
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 12); });
 
   gsap.to('.hero .fade-up', { opacity: 1, y: 0, duration: 1.1, ease: 'power2.out', stagger: 0.1, delay: 0.2 });
   gsap.utils.toArray('section').forEach(section => {
