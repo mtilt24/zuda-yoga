@@ -209,8 +209,6 @@
   .gallery-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .g-tile { aspect-ratio: 4 / 5; border-radius: 6px; overflow: hidden; background-size: cover; background-position: center; transition: transform .5s ease; }
   .g-tile:hover { transform: scale(1.02); }
-  .g-tile.tall { grid-row: span 2; aspect-ratio: 4 / 6; }
-  .g-tile.wide { grid-column: span 2; aspect-ratio: 8 / 5; }
 
   /* HOSTS */
   .hosts-grid { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -225,7 +223,8 @@
   }
   .host-body { padding: 26px 28px 30px; }
   .host-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
-  .host-role { font-family: 'Mulish', sans-serif; font-size: 13px; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 600; text-transform: uppercase; }
+  .host-role { font-family: 'Mulish', sans-serif; font-size: 13px; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 600; text-transform: uppercase; margin-bottom: 14px; }
+  .host-bio { font-size: 14.5px; line-height: 1.65; color: var(--muted); font-weight: 400; }
 
   /* ROOMS */
   .rooms-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -324,8 +323,6 @@
     .include-card h3 { font-size: 17px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .g-tile { aspect-ratio: 4 / 5; }
-    .g-tile.tall { grid-row: auto; aspect-ratio: 4 / 5; }
-    .g-tile.wide { grid-column: span 2; aspect-ratio: 4 / 3; }
     .hosts-grid { grid-template-columns: 1fr; gap: 16px; max-width: 420px; }
     .host-portrait { aspect-ratio: 16 / 10; font-size: 56px; }
     .rooms-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -454,13 +451,14 @@
     <p>Luxury accommodations, open-air yoga shalas, jungle gardens, three pools, and an on-site spa, all in the heart of Nosara.</p>
   </div>
   <div class="gallery-grid">
-    <div class="g-tile tall fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746797217')"></div>
+    <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746797217')"></div>
     <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/172527690')"></div>
     <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/172529133')"></div>
     <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746791436')"></div>
     <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/dadbf467-1')"></div>
-    <div class="g-tile wide fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1600/FGA/172529070')"></div>
+    <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/172529070')"></div>
     <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746812106')"></div>
+    <div class="g-tile fade-up" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/746793388')"></div>
   </div>
 </section>
 
@@ -476,13 +474,15 @@
       <div class="host-body">
         <div class="host-name">Jimmy Wheeler</div>
         <div class="host-role">Lead Teacher</div>
+        <p class="host-bio">Founder of the Sacred Reset retreats, Jimmy teaches vinyasa with a deep love for breath, philosophy, and creative movement. His classes meet you wherever you are, dynamic, accessible, and full of heart.</p>
       </div>
     </div>
     <div class="host fade-up">
-      <div class="host-portrait" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1779228679/DSC06914_h3ft2w.jpg'); background-size: cover; background-position: center top;"></div>
+      <div class="host-portrait" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1779228679/DSC06914_h3ft2w.jpg'); background-size: cover; background-position: center -30px;"></div>
       <div class="host-body">
         <div class="host-name">Heidi Hemler</div>
         <div class="host-role">Co-Teacher</div>
+        <p class="host-bio">Co-leader of the Sacred Reset retreats, Heidi brings warmth and grounded presence to every practice. Her teaching invites students into stillness, breath, and the inner work the mat makes space for.</p>
       </div>
     </div>
   </div>
@@ -497,7 +497,7 @@
   <div class="rooms-grid">
 
     <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/bodhicasitas-kirstenellis-022-hr-870x965')"></div>
+      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1777165270/FGA/jungle-room-bodhi-tree-4-870x965.webp')"></div>
       <div class="room-body">
         <div class="room-name">Casita Standard, Shared</div>
         <div class="room-price"><strong>$2,500</strong><span class="pp">per person</span></div>
@@ -533,7 +533,7 @@
     </a>
 
     <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/bodhicasitas-kirstenellis-007-hr-870x965')"></div>
+      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1777165270/FGA/jungle-room-bodhi-tree-4-870x965.webp')"></div>
       <div class="room-body">
         <div class="room-name">Casita Standard, King</div>
         <div class="room-price"><strong>$3,500</strong><span class="pp">per person</span></div>
