@@ -49,7 +49,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
@@ -70,7 +70,8 @@
   body { overflow-x: hidden; background: var(--white); color: var(--ink); font-family: 'Inter', 'halyard-text', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.65; font-weight: 400; }
   img { max-width: 100%; display: block; }
 
-  h1, h2, h3, h4 { font-family: 'Mulish', 'brandon-grotesque', system-ui, sans-serif; font-weight: 700; color: var(--ink); letter-spacing: -0.005em; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif; font-weight: 500; color: var(--ink); letter-spacing: -0.005em; }
+  .gold-italic, h1 .gold, h2 .gold, .final h2 .gold { font-style: italic; font-weight: 500; }
 
   /* BUTTONS */
   .btn {
@@ -104,8 +105,8 @@
   }
   .hero-inner { max-width: 1000px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
   .hero h1 {
-    font-family: 'Mulish', sans-serif; font-weight: 700;
-    font-size: clamp(40px, 6vw, 84px); line-height: 1.05;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500;
+    font-size: clamp(46px, 7vw, 96px); line-height: 1.02;
     letter-spacing: -0.015em;
     margin-bottom: 28px;
     color: var(--light);
@@ -136,9 +137,9 @@
   .container-narrow { max-width: 820px; margin: 0 auto; }
   .section-head { text-align: center; margin-bottom: 64px; }
   .section-head h2 {
-    font-family: 'Mulish', sans-serif; font-weight: 700;
-    font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15;
-    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500;
+    font-size: clamp(34px, 4vw, 54px); line-height: 1.1;
+    color: var(--ink); letter-spacing: -0.01em;
   }
   .section-head h2 .gold { color: var(--gold-deep); }
   .section-head p { color: var(--muted); font-size: 17px; max-width: 600px; margin: 20px auto 0; line-height: 1.7; font-weight: 400; }
@@ -157,17 +158,18 @@
   /* INTRO */
   .intro { text-align: center; }
   .intro h2 {
-    font-family: 'Mulish', sans-serif; font-weight: 700;
-    font-size: clamp(30px, 3.6vw, 48px); line-height: 1.15;
-    color: var(--ink); margin-bottom: 36px;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500;
+    font-size: clamp(34px, 4.2vw, 56px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 36px; letter-spacing: -0.01em;
   }
   .intro h2 .gold { color: var(--gold-deep); }
   .intro p { font-size: 17px; line-height: 1.85; color: var(--ink-soft); max-width: 720px; margin: 0 auto 22px; font-weight: 400; }
   .intro p.lead {
-    font-family: 'Mulish', sans-serif;
-    font-size: 21px; line-height: 1.55;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(22px, 2.2vw, 28px); line-height: 1.5;
     color: var(--ink); margin-bottom: 36px;
-    font-weight: 500;
+    font-weight: 400; font-style: italic;
+    letter-spacing: 0;
   }
 
   /* DATES STRIP */
@@ -187,7 +189,7 @@
   }
   .include-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 20px 40px -20px rgba(49, 49, 49, 0.15); }
   .include-card .num { font-family: 'Mulish', sans-serif; color: var(--gold-deep); font-size: 13px; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; }
-  .include-card h3 { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
+  .include-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.25; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.005em; }
   .include-card p { font-size: 14.5px; color: var(--muted); line-height: 1.65; font-weight: 400; }
 
   /* GALLERY */
@@ -214,7 +216,7 @@
     font-size: 72px; font-weight: 700; letter-spacing: 0.04em;
   }
   .host-body { padding: 26px 28px 30px; }
-  .host-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
+  .host-name { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 28px; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.005em; }
   .host-role { font-family: 'Mulish', sans-serif; font-size: 13px; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 600; text-transform: uppercase; margin-bottom: 14px; }
   .host-bio { font-size: 14.5px; line-height: 1.65; color: var(--muted); font-weight: 400; }
 
@@ -261,7 +263,7 @@
   @media (max-width: 860px) {
     .rc-btn { opacity: 1; width: 36px; height: 36px; font-size: 20px; background: rgba(255, 255, 255, 0.92); }
   }
-  .room-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); margin-bottom: 12px; line-height: 1.3; }
+  .room-name { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 26px; color: var(--ink); margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.005em; }
   .room-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
   .room-price strong { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 28px; color: var(--gold-deep); }
   .room-price .pp { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); font-weight: 500; }
@@ -282,7 +284,7 @@
   /* NOTES */
   .notes-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .note-card { padding: 36px; background: var(--white); border-radius: 6px; border: 1px solid var(--hairline); }
-  .note-card h3 { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); margin-bottom: 20px; }
+  .note-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 26px; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.005em; }
   .note-card ul { list-style: none; padding: 0; }
   .note-card li { padding: 12px 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; border-bottom: 1px solid var(--hairline); font-weight: 400; }
   .note-card li:last-child { border-bottom: none; }
@@ -298,7 +300,7 @@
     color: var(--white); text-align: center;
   }
   .final-inner { max-width: 760px; margin: 0 auto; }
-  .final h2 { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 60px); line-height: 1.1; color: var(--white); margin-bottom: 24px; letter-spacing: -0.015em; }
+  .final h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(40px, 5.2vw, 72px); line-height: 1.05; color: var(--white); margin-bottom: 24px; letter-spacing: -0.015em; }
   .final h2 .gold { color: var(--gold); }
   .final p { color: rgba(243, 243, 243, 0.88); font-size: 17px; line-height: 1.75; max-width: 580px; margin: 0 auto 36px; font-weight: 400; }
 
@@ -310,7 +312,7 @@
   }
   @media (max-width: 860px) {
     .hero { padding: 60px 18px 60px; min-height: auto; }
-    .hero h1 { font-size: clamp(34px, 9vw, 52px); }
+    .hero h1 { font-size: clamp(40px, 10vw, 62px); }
     .hero-sub { font-size: 16px; }
     .hero-meta { font-size: 12px; gap: 10px; margin-bottom: 32px; }
     .hero-actions { flex-direction: column; align-items: center; gap: 14px; }
@@ -318,11 +320,11 @@
     .hero-price { text-align: center; }
     section { padding: 70px 18px; }
     .section-head { margin-bottom: 40px; }
-    .section-head h2 { font-size: clamp(26px, 7vw, 36px); }
+    .section-head h2 { font-size: clamp(30px, 8vw, 44px); }
     .section-head p { font-size: 15px; margin-top: 14px; }
-    .intro h2 { font-size: clamp(26px, 7vw, 38px); margin-bottom: 24px; }
+    .intro h2 { font-size: clamp(30px, 8vw, 44px); margin-bottom: 24px; }
     .intro p { font-size: 16px; line-height: 1.75; }
-    .intro p.lead { font-size: 18px; }
+    .intro p.lead { font-size: 22px; }
     .strip { padding: 40px 18px; }
     .strip-inner { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
     .strip-item .label { font-size: 11px; }
@@ -341,7 +343,7 @@
     .notes-inner { grid-template-columns: 1fr; gap: 14px; }
     .note-card { padding: 26px 22px; }
     .final { padding: 90px 18px; }
-    .final h2 { font-size: clamp(28px, 8vw, 42px); }
+    .final h2 { font-size: clamp(34px, 9vw, 50px); }
     .final p { font-size: 16px; }
     .final .btn { width: 100%; max-width: 360px; justify-content: center; padding: 16px 24px; }
   }
