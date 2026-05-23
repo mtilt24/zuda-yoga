@@ -55,24 +55,45 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-  /* Break out of Squarespace container padding */
+  /* Break out of Squarespace container */
+  .sqs-block-code,
   .sqs-block-code .sqs-block-content,
-  .sqs-block.sqs-block-code {
-    padding: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
+  .sqs-block,
   .sqs-layout,
   .sqs-row,
   .sqs-col,
+  .sqs-col-12,
+  .row,
+  .col,
   .content-wrapper,
+  .content,
+  .page-section,
+  .page-section .content-wrapper,
+  .page-section .content,
+  .section-background,
   .Index-page-content,
+  .fluid-engine,
+  .fe-block,
   #page,
   #content,
-  .page-section .content-wrapper {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  #sections,
+  #site,
+  .Site,
+  .Site-inner,
+  .Main,
+  .Main-content {
+    padding: 0 !important;
+    margin: 0 !important;
     max-width: 100% !important;
+    width: 100% !important;
+  }
+  .page-section {
+    min-height: 0 !important;
+    border: none !important;
+  }
+  footer, .Footer, .footer-inner,
+  header, .Header {
+    display: none !important;
   }
 
   :root {
