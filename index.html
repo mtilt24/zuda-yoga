@@ -43,7 +43,7 @@
     { "@type": "Offer", "name": "Jungle Room Bungalow", "price": "3000", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" },
     { "@type": "Offer", "name": "Casita Standard King", "price": "3500", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" },
     { "@type": "Offer", "name": "Casita Deluxe", "price": "4000", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" },
-    { "@type": "Offer", "name": "King Bungalow", "price": "4000", "priceCurrency": "USD", "availability": "https://schema.org/SoldOut", "url": "https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" }
+    { "@type": "Offer", "name": "King Bungalow", "price": "4000", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" }
   ]
 }
 </script>
@@ -231,7 +231,36 @@
   }
   .room:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -28px rgba(49, 49, 49, 0.25); border-color: var(--gold); }
   .room-img { aspect-ratio: 4 / 3; background-size: cover; background-position: center; background-color: var(--light); }
-  .room-body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+  .room-body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; text-decoration: none; color: inherit; }
+
+  /* ROOM CAROUSEL */
+  .room-carousel { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--light); user-select: none; }
+  .rc-track { display: flex; height: 100%; transition: transform .45s ease; will-change: transform; }
+  .rc-slide { flex: 0 0 100%; height: 100%; background-size: cover; background-position: center; }
+  .rc-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.88); border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; transition: opacity .25s ease, background .25s ease;
+    font-family: 'Mulish', sans-serif; font-size: 22px; line-height: 1; color: var(--ink); z-index: 3;
+    box-shadow: 0 6px 18px -6px rgba(49, 49, 49, 0.35);
+  }
+  .room:hover .rc-btn { opacity: 1; }
+  .rc-btn:hover { background: var(--white); }
+  .rc-prev { left: 12px; }
+  .rc-next { right: 12px; }
+  .rc-dots { position: absolute; bottom: 12px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 3; pointer-events: none; }
+  .rc-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(49, 49, 49, 0.15);
+    cursor: pointer; padding: 0; transition: background .2s ease, transform .2s ease;
+    pointer-events: auto;
+  }
+  .rc-dot.active { background: var(--white); transform: scale(1.35); }
+  @media (max-width: 860px) {
+    .rc-btn { opacity: 1; width: 36px; height: 36px; font-size: 20px; background: rgba(255, 255, 255, 0.92); }
+  }
   .room-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); margin-bottom: 12px; line-height: 1.3; }
   .room-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
   .room-price strong { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 28px; color: var(--gold-deep); }
@@ -473,81 +502,81 @@
 <section class="theme-white" id="rooms">
   <div class="section-head fade-up">
     <h2>Choose your <span class="gold">room</span>.</h2>
-    <p>All rates include the full retreat experience. A $500 deposit holds your spot. Tap any room to book on WeTravel.</p>
+    <p>All rates include the full retreat experience. A $500 deposit holds your spot. Swipe through the photos, then tap to book on WeTravel.</p>
   </div>
   <div class="rooms-grid">
 
-    <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1777165270/FGA/jungle-room-bodhi-tree-4-870x965.webp')"></div>
-      <div class="room-body">
+    <div class="room fade-up">
+      <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-05"></div>
+      <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Casita Standard Shared, King Bed or Twin</div>
         <div class="room-price"><strong>$2,500</strong><span class="pp">per person</span></div>
         <div class="room-availability">6 available</div>
         <p class="room-desc">Two bedrooms connected by one shared ensuite bathroom. Air conditioning. Ideal for friends who want a private sleeping space with shared common areas.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/queen-bungalow')"></div>
-      <div class="room-body">
+    <div class="room fade-up">
+      <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-05"></div>
+      <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Queen Bungalow</div>
         <div class="room-price"><strong>$3,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">4 available</div>
         <p class="room-desc">Two queen beds in one bedroom with a large shared ensuite bathroom and air conditioning. Great for friends sharing a relaxed space.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_900/FGA/jungle-rooms')"></div>
-      <div class="room-body">
+    <div class="room fade-up">
+      <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-05"></div>
+      <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Jungle Room Bungalow</div>
         <div class="room-price"><strong>$3,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">6 available</div>
         <p class="room-desc">Two queen beds in one shared room with shared ensuite bath and air conditioning. Surrounded by lush tropical greenery for a peaceful jungle immersion.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1777165234/FGA/bodhicasitas-kirstenellis-022-hr-870x965.webp')"></div>
-      <div class="room-body">
+    <div class="room fade-up">
+      <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-05"></div>
+      <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Casita Standard King Bed</div>
         <div class="room-price"><strong>$3,500</strong><span class="pp">per person</span></div>
         <div class="room-availability urgent">Only 2 left</div>
         <p class="room-desc">More privacy with a shared ensuite bathroom. Two separate bedrooms connected by one bathroom and air conditioning. Perfect for guests who want their own space.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1779229706/casita_deluxe_bedroom_f6rkj7.png')"></div>
-      <div class="room-body">
+    <div class="room fade-up">
+      <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-05"></div>
+      <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Casita Deluxe</div>
         <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">4 available</div>
         <p class="room-desc">Our most elevated room. Two separate private bedrooms, each with its own bathroom and air conditioning. Shared occupancy available at $2,500 per guest.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a class="room fade-up" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
-      <div class="room-img" style="background-image:url('https://res.cloudinary.com/dstssdnoj/image/upload/v1779229879/king_bungalow_pbsxwr.jpg')"></div>
-      <div class="room-body">
+    <div class="room fade-up">
+      <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-05"></div>
+      <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">King Bungalow</div>
         <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
-        <div class="room-availability urgent">Sold out</div>
+        <div class="room-availability">Just opened up</div>
         <p class="room-desc">Private standalone bungalow with one king bed, private ensuite bathroom, and air conditioning. A quiet, luxurious sanctuary. Shared occupancy at $2,500 per guest available on request.</p>
         <div class="room-deposit">$500 deposit</div>
-        <span class="room-cta">Join Waitlist →</span>
-      </div>
-    </a>
+        <span class="room-cta">Book on WeTravel →</span>
+      </a>
+    </div>
 
   </div>
 </section>
@@ -593,6 +622,71 @@
     gsap.to(section.querySelectorAll('.fade-up'), {
       opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', stagger: 0.07,
       scrollTrigger: { trigger: section, start: 'top 88%', toggleActions: 'play none none none' }
+    });
+  });
+
+  // Room carousels
+  document.querySelectorAll('.room-carousel').forEach(c => {
+    const urls = (c.dataset.images || '').split('|').filter(Boolean);
+    if (!urls.length) return;
+
+    const track = document.createElement('div');
+    track.className = 'rc-track';
+    urls.forEach(u => {
+      const slide = document.createElement('div');
+      slide.className = 'rc-slide';
+      slide.style.backgroundImage = `url('${u}')`;
+      track.appendChild(slide);
+    });
+
+    const prev = document.createElement('button');
+    prev.className = 'rc-btn rc-prev';
+    prev.type = 'button';
+    prev.setAttribute('aria-label', 'Previous image');
+    prev.innerHTML = '‹';
+
+    const next = document.createElement('button');
+    next.className = 'rc-btn rc-next';
+    next.type = 'button';
+    next.setAttribute('aria-label', 'Next image');
+    next.innerHTML = '›';
+
+    const dots = document.createElement('div');
+    dots.className = 'rc-dots';
+
+    c.appendChild(track);
+    if (urls.length > 1) {
+      c.appendChild(prev);
+      c.appendChild(next);
+      c.appendChild(dots);
+    }
+
+    let idx = 0;
+    const dotEls = urls.map((_, i) => {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'rc-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', `Go to image ${i + 1}`);
+      d.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); go(i); });
+      dots.appendChild(d);
+      return d;
+    });
+
+    function go(i) {
+      idx = ((i % urls.length) + urls.length) % urls.length;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dotEls.forEach((d, di) => d.classList.toggle('active', di === idx));
+    }
+
+    prev.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); go(idx - 1); });
+    next.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); go(idx + 1); });
+
+    let sx = 0, dx = 0, swiping = false;
+    track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; dx = 0; swiping = true; }, { passive: true });
+    track.addEventListener('touchmove', e => { if (swiping) dx = e.touches[0].clientX - sx; }, { passive: true });
+    track.addEventListener('touchend', () => {
+      if (swiping && Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+      swiping = false;
     });
   });
 </script>
