@@ -130,6 +130,13 @@
   .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: center; }
   .hero-price { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(243, 243, 243, 0.85); font-weight: 400; }
   .hero-price strong { color: var(--gold); font-weight: 600; }
+  .hero-price .price-was { text-decoration: line-through; opacity: 0.6; margin-right: 4px; }
+  .hero-early {
+    display: inline-block; margin-top: 14px;
+    font-family: 'Mulish', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 600;
+    color: var(--gold); background: rgba(221, 188, 137, 0.12);
+    padding: 8px 20px; border-radius: 4px; border: 1px solid rgba(221, 188, 137, 0.3);
+  }
 
   /* SECTION SHARED */
   section { padding: 110px 24px; }
@@ -266,9 +273,11 @@
   .room-name { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 26px; color: var(--ink); margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.005em; }
   .room-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
   .room-price strong { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 28px; color: var(--gold-deep); }
+  .room-price .price-original { font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 18px; color: var(--muted); text-decoration: line-through; margin-right: 6px; }
   .room-price .pp { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); font-weight: 500; }
   .room-availability { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 600; margin-bottom: 16px; text-transform: uppercase; }
   .room-availability.urgent { color: #B65A3F; }
+  .early-badge { display: inline-block; font-family: 'Mulish', sans-serif; font-size: 11px; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; background: var(--gold); color: var(--ink); padding: 4px 10px; border-radius: 3px; margin-bottom: 14px; }
   .room-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 22px; flex: 1; font-weight: 400; }
   .room-deposit { font-family: 'Mulish', sans-serif; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 18px; font-weight: 500; }
   .room-cta {
@@ -366,8 +375,9 @@
     </div>
     <div class="hero-actions fade-up">
       <a class="btn btn-gold" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">Reserve Your Room <span class="arrow">→</span></a>
-      <span class="hero-price">From <strong>$2,500</strong> · $500 deposit holds your spot</span>
+      <span class="hero-price">From <span class="price-was">$2,800</span> <strong>$2,500</strong> · $500 deposit holds your spot</span>
     </div>
+    <div class="hero-early fade-up">Early bird pricing ends July 1</div>
   </div>
 </section>
 
@@ -505,7 +515,7 @@
 <section class="theme-white" id="rooms">
   <div class="section-head fade-up">
     <h2>Choose your <span class="gold">room</span>.</h2>
-    <p>All rates include the full retreat experience. A $500 deposit holds your spot. Swipe through the photos, then tap to book on WeTravel.</p>
+    <p>Early bird pricing through July 1. All rates include the full retreat experience. A $500 deposit holds your spot.</p>
   </div>
   <div class="rooms-grid">
 
@@ -513,7 +523,8 @@
       <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-05|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-06|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-07|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-shared-08"></div>
       <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Casita Standard Shared, King Bed or Twin</div>
-        <div class="room-price"><strong>$2,500</strong><span class="pp">per person</span></div>
+        <span class="early-badge">Early bird</span>
+        <div class="room-price"><span class="price-original">$2,800</span><strong>$2,500</strong><span class="pp">per person</span></div>
         <div class="room-availability">6 available</div>
         <p class="room-desc">Two bedrooms connected by one shared ensuite bathroom. Air conditioning. Ideal for friends who want a private sleeping space with shared common areas.</p>
         <div class="room-deposit">$500 deposit</div>
@@ -525,7 +536,8 @@
       <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-05|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-06|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/queen-bungalow-07"></div>
       <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Queen Bungalow</div>
-        <div class="room-price"><strong>$3,000</strong><span class="pp">per person</span></div>
+        <span class="early-badge">Early bird</span>
+        <div class="room-price"><span class="price-original">$3,300</span><strong>$3,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">4 available</div>
         <p class="room-desc">Two queen beds in one bedroom with a large shared ensuite bathroom and air conditioning. Great for friends sharing a relaxed space.</p>
         <div class="room-deposit">$500 deposit</div>
@@ -537,7 +549,8 @@
       <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-05|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-06|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/jungle-room-07"></div>
       <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Jungle Room Bungalow</div>
-        <div class="room-price"><strong>$3,000</strong><span class="pp">per person</span></div>
+        <span class="early-badge">Early bird</span>
+        <div class="room-price"><span class="price-original">$3,300</span><strong>$3,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">6 available</div>
         <p class="room-desc">Two queen beds in one shared room with shared ensuite bath and air conditioning. Surrounded by lush tropical greenery for a peaceful jungle immersion.</p>
         <div class="room-deposit">$500 deposit</div>
@@ -549,7 +562,8 @@
       <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-05|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-06|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-king-07"></div>
       <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Casita Standard King Bed</div>
-        <div class="room-price"><strong>$3,500</strong><span class="pp">per person</span></div>
+        <span class="early-badge">Early bird</span>
+        <div class="room-price"><span class="price-original">$3,800</span><strong>$3,500</strong><span class="pp">per person</span></div>
         <div class="room-availability urgent">Only 2 left</div>
         <p class="room-desc">More privacy with a shared ensuite bathroom. Two separate bedrooms connected by one bathroom and air conditioning. Perfect for guests who want their own space.</p>
         <div class="room-deposit">$500 deposit</div>
@@ -561,9 +575,10 @@
       <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-05|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/casita-deluxe-06"></div>
       <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">Casita Deluxe</div>
-        <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
+        <span class="early-badge">Early bird</span>
+        <div class="room-price"><span class="price-original">$4,300</span><strong>$4,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">4 available</div>
-        <p class="room-desc">Our most elevated room. Two separate private bedrooms, each with its own bathroom and air conditioning. Shared occupancy available at $2,500 per guest.</p>
+        <p class="room-desc">Our most elevated room. Two separate private bedrooms, each with its own bathroom and air conditioning. Shared occupancy available at $2,500 per guest (early bird).</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
       </a>
@@ -573,9 +588,10 @@
       <div class="room-carousel" data-images="https://res.cloudinary.com/dstssdnoj/image/upload/v1779229879/king_bungalow_pbsxwr.jpg|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-01|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-02|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-03|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-04|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-05|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-06|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-07|https://res.cloudinary.com/dstssdnoj/image/upload/f_auto,q_auto,w_1200/Bodhi/Rooms/king-bungalow-08"></div>
       <a class="room-body" href="https://www.wetravel.com/trips/costa-rica-sacred-reset-flow-2026-with-jimmy-wheeler-heidi-hemler-copy-jimmy-wheeler-3712196899" target="_blank" rel="noopener">
         <div class="room-name">King Bungalow</div>
-        <div class="room-price"><strong>$4,000</strong><span class="pp">per person</span></div>
+        <span class="early-badge">Early bird</span>
+        <div class="room-price"><span class="price-original">$4,300</span><strong>$4,000</strong><span class="pp">per person</span></div>
         <div class="room-availability">Just opened up</div>
-        <p class="room-desc">Private standalone bungalow with one king bed, private ensuite bathroom, and air conditioning. A quiet, luxurious sanctuary. Shared occupancy at $2,500 per guest available on request.</p>
+        <p class="room-desc">Private standalone bungalow with one king bed, private ensuite bathroom, and air conditioning. A quiet, luxurious sanctuary. Shared occupancy at $2,500 per guest (early bird) available on request.</p>
         <div class="room-deposit">$500 deposit</div>
         <span class="room-cta">Book on WeTravel →</span>
       </a>
